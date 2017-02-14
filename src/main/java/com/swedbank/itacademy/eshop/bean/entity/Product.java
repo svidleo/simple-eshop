@@ -1,7 +1,6 @@
 package com.swedbank.itacademy.eshop.bean.entity;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity(name = "products")
 public class Product {

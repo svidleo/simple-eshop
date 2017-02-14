@@ -2,7 +2,6 @@ package com.swedbank.itacademy.eshop.bean.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Set;
 
 @Entity(name = "orders")
@@ -22,6 +21,14 @@ public class Order {
     @ManyToMany
     @JoinTable(name = "products_orders", joinColumns = @JoinColumn(name = "order_id", referencedColumnName = "order_id"), inverseJoinColumns = @JoinColumn(name = "product_id", referencedColumnName = "product_id"))
     private Set<Product> products;
+
+    public Order() {}
+
+    public Order(LocalDate date, Customer customer, Set<Product> products) {
+        this.date = date;
+        this.customer = customer;
+        this.products = products;
+    }
 
     public Long getId() {
         return id;
