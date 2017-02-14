@@ -28,7 +28,6 @@ public class ShopController {
         return categoriesRepository.findAll();
     }
 
-
     @RequestMapping(value = "/products", method = RequestMethod.GET)
     public Iterable<Product> getProducts() {
         return productsRespository.findAll();
@@ -43,8 +42,6 @@ public class ShopController {
 
     @RequestMapping(value = "/orders", method = RequestMethod.GET)
     public Iterable<Order> getOrders() {
-
-        Iterable<Order> orders = ordersRepository.findAll();
         return ordersRepository.findAll();
     }
 
